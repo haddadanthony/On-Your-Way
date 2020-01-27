@@ -1,0 +1,492 @@
+@import url("http://fonts.googleapis.com/css?family=Allura&display=swap");
+@import url("http://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import "font-awesome/fontawesome";
+@import "font-awesome/solid";
+@import "font-awesome/regular";
+@import "font-awesome/brands.scss";
+@import "reset";
+
+// Variables
+$primary: #c81189;
+$secondary: lighten(#c81189, 45%);
+$accent: lighten(#c81189, 40%);
+$margin: 50px;
+
+// Mixins
+@mixin mQ($arg) {
+  @media screen and (min-width: $arg) {
+    @content;
+  }
+}
+
+/*----------------------*/
+/*---HOME PAGE---*/
+/*----------------------*/
+
+body {
+  position: relative;
+  min-height: 100vh !important;
+  background: $secondary;
+  overflow-x: hidden;
+  h1,
+  h2,
+  h3 {
+    @include mQ(730px) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+#wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  width: 92%;
+  margin: 0 auto;
+  padding-bottom: 12em;
+}
+
+header {
+  @include mQ(730px) {
+    height: 10vh;
+    padding: 5px;
+  }
+  height: 45vh;
+  position: relative;
+
+  .bg {
+    @include mQ(730px) {
+      display: none;
+    }
+    background-image: url("../images/pickup.jpg");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+  }
+
+  #hero {
+    font-family: "Allura";
+    font-size: 2.5em;
+    margin-top: 10px;
+    color: #fff;
+    align-self: flex-start;
+    display: block;
+    @include mQ(730px) {
+      flex: 2 300px;
+      align-self: flex-end;
+      margin: 0;
+      padding: 15px;
+    }
+  }
+
+  nav {
+    @include mQ(730px) {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      background: $accent;
+      padding: 5px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav-link {
+    @include mQ(730px) {
+      flex-grow: 1;
+      width: auto;
+      margin: 0;
+    }
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    transition: 5ms;
+    &:hover {
+      background: $secondary;
+      transition: 5ms;
+    }
+  }
+
+  #nav-link a {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+// ABOUT & HOW IT WORKS
+
+#main-content {
+  margin-top: $margin;
+  #car-container {
+    display: none;
+    @include mQ(730px) {
+      display: inline-block;
+    }
+    opacity: 0.6;
+    margin: 10px;
+    float: right;
+    position: relative;
+
+    .wheel-1,
+    .wheel-2 {
+      width: 71px;
+      height: 71px;
+      animation: animate 1s linear infinite;
+    }
+
+    .wheel-1 {
+      position: absolute;
+      left: 33px;
+      top: 45px;
+    }
+
+    .wheel-2 {
+      position: absolute;
+      right: 66px;
+      bottom: 0;
+    }
+
+    .car {
+      position: relative;
+      animation: shake 400ms linear infinite;
+      width: 430px;
+      height: 110px;
+    }
+  }
+
+  #works {
+    margin-top: 30px;
+  }
+}
+
+// TESTIMONIALS
+
+#testimonials {
+  margin-top: $margin;
+  @include mQ(730px) {
+    div {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  p {
+    margin-bottom: 5px;
+    @include mQ(730px) {
+      padding: 15px;
+    }
+  }
+
+  blockquote {
+    margin: $margin 0;
+    flex: 1 1;
+    text-align: center;
+  }
+
+  img {
+    margin: 0 20px 5px 0;
+    border-radius: 50%;
+    border: 3px solid $accent;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    @include mQ(730px) {
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
+
+  cite {
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+}
+
+// GET APP BUTTON
+
+#btn {
+  text-align: center;
+}
+
+#btn a {
+  text-decoration: none;
+  padding: 10px;
+  color: $primary;
+  border: 1px solid $primary;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  word-spacing: 1px;
+  font-weight: bold;
+  &:hover {
+    background: $accent;
+    transition: 3ms;
+  }
+}
+
+// FOOTER
+
+footer {
+  background: rgba($color: #000000, $alpha: 0.1);
+  height: auto;
+  padding: 10px;
+  // margin-top: $margin + 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  ul {
+    @include mQ(730px) {
+      text-align: right;
+      margin-right: 50px;
+    }
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  #social-link {
+    display: inline-block;
+    &:nth-child(2) {
+      margin: 0 30px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    @include mQ(730px) {
+      &:nth-child(2) {
+        margin: 0 100px;
+      }
+    }
+  }
+
+  .fab {
+    font-size: 1.7em;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    @include mQ(730px) {
+      font-size: 2.2em;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+/*----------------------*/
+/*---EVENTS PAGE---*/
+/*----------------------*/
+
+#event-cards {
+  @media screen and (max-width: 842px) {
+    flex-direction: column;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 730px) {
+    width: 90%;
+  }
+
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+#gathering,
+#party {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.event {
+  box-shadow: 4px 4px 10px 5px $accent;
+  height: auto;
+  overflow-x: hidden;
+  border: 2px solid $accent;
+  flex: 0 1 40%;
+  @media screen and (max-width: 842px) {
+    margin: 10px;
+  }
+  &:hover {
+    box-shadow: none;
+    transition: 5ms;
+  }
+  #gathering {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+
+    p {
+      color: $primary;
+      font-weight: bold;
+      font-size: 0.9em;
+      display: block;
+
+      &::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+        height: 5px;
+        background: #fff;
+        opacity: 0.5;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../images/gathering.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+      z-index: -2;
+    }
+  }
+
+  #party {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+
+    p {
+      color: $primary;
+      font-weight: bold;
+      font-size: 0.9em;
+      display: block;
+
+      &::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+        height: 5px;
+        background: #fff;
+        opacity: 0.5;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../images/party.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+      z-index: -2;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 20px;
+
+    time {
+      font-size: 0.9em;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/*----------------------*/
+/*---CONTACT PAGE---*/
+/*----------------------*/
+
+#contact-section {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  #info {
+    padding: 30px;
+    border: 3px dashed $primary;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+
+  strong {
+    margin-right: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .form-field {
+    padding: 10px;
+
+    label {
+      font-weight: bold;
+      display: block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+
+      &:focus {
+        outline-color: blue;
+      }
+    }
+  }
+
+  button {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 2px;
+  }
+}
