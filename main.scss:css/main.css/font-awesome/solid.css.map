@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;GAGG;AAGH,UAYC;EAXC,WAAW,EAAE,qBAAqB;EAClC,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,GAAG;EAChB,YAAY,ECLI,IAAI;EDMpB,GAAG,EAAE,mCAAwC;EAC7C,GAAG,EAAE,ySAK+D;AAGtE;IACK;EACH,WAAW,EAAE,qBAAqB;EAClC,WAAW,EAAE,GAAG",
+"sources": ["../../../scss/font-awesome/solid.scss","../../../scss/font-awesome/_variables.scss"],
+"names": [],
+"file": "solid.css"
+}

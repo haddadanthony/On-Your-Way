@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;GAGG;AAGH,UAYC;EAXC,WAAW,EAAE,uBAAuB;EACpC,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,MAAM;EACnB,YAAY,ECLI,IAAI;EDMpB,GAAG,EAAE,oCAAyC;EAC9C,GAAG,EAAE,8SAKgE;AAGvE,IAAK;EACH,WAAW,EAAE,uBAAuB",
+"sources": ["../../../scss/font-awesome/brands.scss","../../../scss/font-awesome/_variables.scss"],
+"names": [],
+"file": "brands.css"
+}
